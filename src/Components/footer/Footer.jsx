@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import { assets } from "../../assets/assets";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -35,7 +36,11 @@ const Footer = () => {
           <h2>GET IN TOUCH</h2>
           <ul>
             <li>+1-(709)-(346)-448</li>
-            <li>contact@tomato.com</li>
+            <li>
+              <Link to="mailto:kavitipavansai@gmail.com">
+                kavitipavansai@gmail.com
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
