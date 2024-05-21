@@ -11,9 +11,9 @@ const Header = () => {
           dish. discovering a wide variety of meals from many restaurants, and
           it will be worthwhile to try them all.
         </p>
-        <button>
-          <Link to="explore-menu">View Menu</Link>
-        </button>
+        <Link to="explore-menu">
+          <button>View Menu</button>
+        </Link>
       </div>
     </div>
   );
