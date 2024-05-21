@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.css";
-
+import { Link } from "react-scroll";
 const Header = () => {
   return (
     <div className="header">
@@ -11,7 +11,9 @@ const Header = () => {
           dish. discovering a wide variety of meals from many restaurants, and
           it will be worthwhile to try them all.
         </p>
-        <button>View Menu</button>
+        <button>
+          <Link to="explore-menu">View Menu</Link>
+        </button>
       </div>
     </div>
   );
