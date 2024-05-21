@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./Navbar.css";
 import { assets, menu_list } from "../../assets/assets";
-// import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import { StoreContext } from "../../context/StoreContex";
 import { Link } from "react-scroll";
 const Navbar = ({ setshowlogin }) => {
@@ -60,9 +60,9 @@ const Navbar = ({ setshowlogin }) => {
       <div className="navbar-right">
         <img src={assets.search_icon} alt="search_icon" />
         <div className="navbar-search-icon">
-          <Link to="/cart">
+          <RouterLink to="/cart">
             <img src={assets.basket_icon} alt="cart" />
-          </Link>
+          </RouterLink>
           {getTotalCartAmount() > 0 ? <div className="dot"></div> : <></>}
         </div>
         <button onClick={() => setshowlogin((prev) => (prev = true))}>
