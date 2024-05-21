@@ -1,8 +1,9 @@
 import React, { useContext, useState } from "react";
 import "./Navbar.css";
 import { assets, menu_list } from "../../assets/assets";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { StoreContext } from "../../context/StoreContex";
+import { Link } from "react-scroll";
 const Navbar = ({ setshowlogin }) => {
   const [menu, setmenu] = useState("");
   const { getTotalCartAmount } = useContext(StoreContext);
@@ -12,38 +13,49 @@ const Navbar = ({ setshowlogin }) => {
         <img src={assets.logo} alt="logo" className="logo" />
       </Link>
       <ul className="navbar-menu">
-        <li
-          className={menu === "home" ? "active" : ""}
-          onClick={() => {
-            setmenu("home");
-          }}
-        >
-          <Link to="/">home</Link>
-        </li>
-        <li
-          className={menu === "menu" ? "active" : ""}
-          onClick={() => {
-            setmenu("menu");
-          }}
-        >
-          menu
-        </li>
-        <li
-          className={menu === "mobile-app" ? "active" : ""}
-          onClick={() => {
-            setmenu("mobile-app");
-          }}
-        >
-          mobile-app
-        </li>
-        <li
-          className={menu === "contact-us" ? "active" : ""}
-          onClick={() => {
-            setmenu((prev) => (prev = "contact-us"));
-          }}
-        >
-          contact-us
-        </li>
+        <Link to="/">
+          <li
+            className={menu === "home" ? "active" : ""}
+            onClick={() => {
+              setmenu("home");
+            }}
+          >
+            home
+          </li>
+        </Link>
+        <Link to="explore-menu" smooth={true} duration={500}>
+          <li
+            className={menu === "menu" ? "active" : ""}
+            onClick={() => {
+              setmenu("menu");
+            }}
+          >
+            {/* <Link to="explore-menu" smooth={true} duration={500}>
+            menu
+          </Link> */}
+            menu
+          </li>
+        </Link>
+        <Link to="app-download" smooth={true} duration={500}>
+          <li
+            className={menu === "mobile-app" ? "active" : ""}
+            onClick={() => {
+              setmenu("mobile-app");
+            }}
+          >
+            mobile-app
+          </li>
+        </Link>
+        <Link to="footer" smooth={true} duration={500}>
+          <li
+            className={menu === "contact-us" ? "active" : ""}
+            onClick={() => {
+              setmenu((prev) => (prev = "contact-us"));
+            }}
+          >
+            contact-us
+          </li>
+        </Link>
       </ul>
       <div className="navbar-right">
         <img src={assets.search_icon} alt="search_icon" />
